@@ -9,6 +9,7 @@ import { Footer } from "./components/Footer";
 
 import {AuthProvider} from './AuthProvider';
 
+<link rel="icon" href="/logo1.jpg" sizes="any" />
 export const metadata = {
   title: "Satarupa's Collection",
   description: "Satarupa's Collection is a collection of my beautiful art, crafts, and textiles. I am a beautiful designer. I craft beautiful crafts, textiles, and art."
