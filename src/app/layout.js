@@ -21,7 +21,8 @@ export default function RootLayout({ children }) {
       <Head>
         <title>{metadata.title}</title>
         <meta name="description" content={metadata.description} />
-        <link rel="icon" href="./logo1.jpg" />
+        <link rel="icon" href="./logo1.jpg" sizes="any" />
+        <link rel="icon" href="/logo1.jpg" sizes="any" />
       </Head>
       <AuthProvider>
         <StateProvider>
