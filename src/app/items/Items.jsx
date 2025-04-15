@@ -64,7 +64,7 @@ export default function Items() {
                   show !== null ? (
                     <ItemCard 
                       key={index}
-                      id={item.img}
+                      id={item.id}
                       show={true}
                       img={item.img}
                       category={item.category}
