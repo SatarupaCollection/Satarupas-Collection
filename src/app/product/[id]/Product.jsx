@@ -8,7 +8,7 @@ import Loading from '@/app/components/Loading'
 import { useStateAuth } from '../../data/Context.jsx'
 
 
-export default function Product({ _id,title, desc, img, category, price }) {
+export default function Product({ _id,title, description, img, category, price }) {
   const [show, setShow] = useState(null)
   const { data, setData } = useStateAuth();
     const [loading, setLoading] = useState(true)
@@ -30,6 +30,7 @@ export default function Product({ _id,title, desc, img, category, price }) {
     }
   function additem() {
     const id=_id;
+    const desc=description;
     const item = { id, category, title, price, img, desc, quantity: 1 };
     
     if (data?.length > 0) {
@@ -71,7 +72,7 @@ export default function Product({ _id,title, desc, img, category, price }) {
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           />
         </div>
-        <p className="text-muted-foreground">{desc}</p>
+        <p className="text-muted-foreground">{description}</p>
       </CardContent>
       <CardFooter className="flex flex-col space-y-2">
         {!show &&
