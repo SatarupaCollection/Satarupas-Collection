@@ -29,7 +29,8 @@ export default function Product({ _id,title, desc, img, category, price }) {
   
     }
   function additem() {
-    const item = { id:_id, category, title, price, img, desc, quantity: 1 };
+    const id=_id;
+    const item = { id, category, title, price, img, desc, quantity: 1 };
     
     if (data?.length > 0) {
       const itemExists = data.some(i => i.id === id);
