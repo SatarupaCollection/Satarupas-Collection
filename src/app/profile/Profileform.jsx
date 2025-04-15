@@ -4,16 +4,17 @@ import { Button } from "../../components/ui/button"
 import { Input } from "../../components/ui/input"
 import { Label } from "../../components/ui/label"
 
-
  function ProfileForm({ onSubmit }) {
   const [username, setUsername] = useState('');
   const [phoneNumber, setPhoneNumber] = useState('');
     
   const handleSubmit = async(e) => {
-    const {getUser} = getKindeServerSession();
-    const user = await getUser();
-    var email=user.email;
     e.preventDefault();
+    const user=await fetch('/api/kinde').then((res) => res.json());
+    console.log(user);
+    console.log(user.user);
+    var email=await user.user.email;
+    console.log(email);
     await fetch('/api/user', {
       method: 'POST',
       headers: {
@@ -21,7 +22,9 @@ import { Label } from "../../components/ui/label"
       },
       body: JSON.stringify({ email, username, phoneNumber }),
     });
+    alert("Profile Created Successfully");
     onSubmit();
+    window.location.reload();
   };
 
   return (
