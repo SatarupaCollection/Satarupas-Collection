@@ -64,7 +64,7 @@ export default function Items() {
                   show !== null ? (
                     <ItemCard 
                       key={index}
-                      id={item.img}
+                      id={item._id}
                       show={true}
                       img={item.img}
                       category={item.category}
@@ -75,7 +75,7 @@ export default function Items() {
                   ) : (
                     <ItemCard
                       key={index}
-                      id={item.id}
+                      id={item._id}
                       show={false}
                       img={item.img}
                       category={item.category}
