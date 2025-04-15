@@ -5,7 +5,7 @@ import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "../../../c
 import { useEffect, useState } from 'react'
 import { LoginLink } from '@kinde-oss/kinde-auth-nextjs';
 import Loading from '@/app/components/Loading'
-import { useStateAuth } from '../data/Context.jsx'
+import { useStateAuth } from '../../data/Context.jsx'
 
 
 export default function Product({ _id,title, desc, img, category, price }) {
