@@ -2,7 +2,7 @@ import Image from 'next/image'
 import { Badge } from "../../../components/ui/badge"
 import { Button } from "../../../components/ui/button"
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "../../../components/ui/card"
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { LoginLink } from '@kinde-oss/kinde-auth-nextjs';
 import Loading from '@/app/components/Loading'
 
