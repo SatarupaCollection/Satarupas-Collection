@@ -24,7 +24,6 @@ export default function Items() {
     if(data.data.length>0)
       setShow(data.data);
 
-    setLoading(false);
 
   }
   const [totalItems, setTotalItems] = useState([])
@@ -34,6 +33,7 @@ export default function Items() {
     setTotalItems(items.data);
     const uniqueCategories = [...new Set(items.data.map(item => item.category))];
     setcategories(["all", ...uniqueCategories]);
+    setLoading(false);
   }
   useEffect(() => {
     loadItems();
