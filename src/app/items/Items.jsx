@@ -4,11 +4,13 @@ import { useEffect, useState } from 'react'
 import ItemCard from './Itemcard'
 import { Button } from '../../components/ui/button'
 import Data from '../data/ItemData.js'
+import Loading from '../components/Loading';
 
 export default function Items() {
   const [categories,setcategories] = useState(["all"])
   const [filter, setFilter] = useState("all")
   const [show, setShow] = useState(null)
+  const [loading, setLoading] = useState(true)
   async function loadUserData() {
     console.log("loading user data IS RUNNING")
     const user=await fetch('/api/kinde').then((res) => res.json());
@@ -21,6 +23,8 @@ export default function Items() {
     console.log(data);
     if(data.data.length>0)
       setShow(data.data);
+
+    setLoading(false);
 
   }
   const [totalItems, setTotalItems] = useState([])
@@ -41,6 +45,7 @@ export default function Items() {
 
   return (
     <section className="py-16 bg-gray-50">
+      {loading && <Loading />}
       <div className="container mx-auto px-4">
         <h2 className="text-3xl font-bold text-center mb-8">Our Artisan Collection</h2>
         <div className='flex justify-center'>
@@ -64,7 +69,7 @@ export default function Items() {
                   show !== null ? (
                     <ItemCard 
                       key={index}
-                      id={item.id}
+                      id={item._id}
                       show={true}
                       img={item.img}
                       category={item.category}
@@ -75,7 +80,7 @@ export default function Items() {
                   ) : (
                     <ItemCard
                       key={index}
-                      id={item.id}
+                      id={item._id}
                       show={false}
                       img={item.img}
                       category={item.category}
