@@ -52,7 +52,7 @@ export default function Navbar() {
         </>:
         <>
         {/*  eslint-disable-next-line @next/next/no-html-link-for-pages */}
-        <LoginLink className='kindebutton'>Sign in</LoginLink>
+        <RegisterLink className='kindebutton'>Sign in</RegisterLink>
         </>}
           </div>
           <div className="md:hidden">
@@ -122,7 +122,7 @@ function MobileMenu({ log,isOpen, setIsOpen, items }) {
         </>:
         <>
         {/*  eslint-disable-next-line @next/next/no-html-link-for-pages */}
-        <LoginLink  className='kindebutton'>Login</LoginLink>
+        <RegisterLink  className='kindebutton'>Login</RegisterLink>
         </>}
           
       </div>
